@@ -1,7 +1,5 @@
 python-dotenv
 streamlit
 langchain
-langchain-core
+langchain-community
 langchain-huggingface
-langchain_community
-langchain-text-splitters
