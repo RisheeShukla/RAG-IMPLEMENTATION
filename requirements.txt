@@ -1,0 +1,7 @@
+python-dotenv
+streamlit
+langchain
+langchain-core
+langchain-huggingface
+langchain_community
+langchain-text-splitters
