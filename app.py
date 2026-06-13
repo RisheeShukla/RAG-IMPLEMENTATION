@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 HUGGINGFACEHUB_API_TOKEN=os.getenv('HUGGINGFACE_API_TOKEN')
+os.environ["HUGGINGFACEHUB_API_TOKEN"]=HUGGINGFACEHUB_API_TOKEN
 llm = HuggingFaceEndpoint(
     repo_id="Qwen/Qwen3-235B-A22B-Instruct-2507",
     task="text-generation",
