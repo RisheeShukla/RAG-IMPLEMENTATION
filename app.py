@@ -80,7 +80,6 @@ def fetch_info():
         text=""
         for i, doc in enumerate(results, 1):
             text+= clean_text(doc.page_content)
-            st.markdown(f"### Result {i}")  
         st.header('Data fetched by RAG') 
         st.chat_message("assistant").write(text)
         st.header('Data modified by LLM')
