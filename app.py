@@ -3,7 +3,7 @@ from langchain_community.document_loaders import (
     TextLoader,
     Docx2txtLoader
 )
-from langchain_huggingface import HuggingFaceEndpoint,ChatHuggingFace
+from langchain_huggingface import HuggingFaceEndpoint,ChatHuggingFace,HuggingFaceInferenceAPIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -37,10 +37,10 @@ def clean_text(text):
     return text.strip()
 
 def fetch_info():
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
-    )
-
+    embeddings =HuggingFaceInferenceAPIEmbeddings(
+    api_key=os.getenv("HUGGINGFACEHUB_API_TOKEN"),
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
     temp_path = uploaded_file.name
 
     with open(temp_path, "wb") as f:
