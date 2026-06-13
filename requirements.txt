@@ -3,3 +3,5 @@ streamlit
 langchain
 langchain-community
 langchain-huggingface
+pypdf
+docx2txt
